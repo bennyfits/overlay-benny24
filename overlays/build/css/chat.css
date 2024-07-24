@@ -1,0 +1,172 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#log {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 50px;
+}
+
+#log > div {
+  font-family: "Poppins", sans-serif;
+  padding: 0 0 35px;
+  text-align: right;
+  max-height: 0;
+  animation: slide-down 2s 1;
+  animation-fill-mode: forwards;
+}
+#log > div .meta,
+#log > div .message {
+  transform: translateX(150%);
+}
+#log > div .badges,
+#log > div .name,
+#log > div .message {
+  border-radius: 8px;
+}
+#log > div .badges,
+#log > div .message {
+  background: #101118;
+}
+#log > div .name,
+#log > div .badges {
+  box-sizing: border-box;
+}
+#log > div .meta {
+  height: 29px;
+  min-height: 29px;
+  max-height: 29px;
+  display: block;
+  margin-bottom: 8px;
+  animation: reveal 4s 1;
+  animation-fill-mode: forwards;
+}
+#log > div .name {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+  display: inline-block;
+  padding: 4px 15px;
+  color: white;
+  height: 29px;
+  min-height: 29px;
+  max-height: 29px;
+  position: relative;
+  top: -8px;
+}
+#log > div .badges {
+  display: inline-block;
+  background: #101118;
+  height: 29px;
+  min-height: 29px;
+  max-height: 29px;
+  padding: 0 12px 0 0;
+  margin: 0 -18px 0 0;
+  position: relative;
+  z-index: -1;
+}
+#log > div .badges .badge {
+  margin: 7px 0 7px 4px;
+  width: 15px;
+  height: 15px;
+}
+#log > div .badges .badge:first-child {
+  margin-left: 8px;
+}
+#log > div .badges .badge:last-child {
+  margin-right: 12px;
+}
+#log > div .message {
+  color: white;
+  display: inline-block;
+  padding: 10px 15px;
+  line-height: 170%;
+  text-align: left;
+  animation: 4s reveal 0.25s 1;
+  animation-fill-mode: forwards;
+}
+#log > div:nth-child(6n+1) .name {
+  background: #ff006e;
+}
+#log > div:nth-child(6n+2) .name {
+  background: #0b5bff;
+}
+#log > div:nth-child(6n+3) .name {
+  background: #f66b00;
+}
+#log > div:nth-child(6n+4) .name {
+  background: #9d00ff;
+}
+#log > div:nth-child(6n+5) .name {
+  background: #00cd37;
+}
+#log > div:nth-child(6n+6) .name {
+  background: #db0024;
+}
+
+@media only screen and (max-width: 600px) {
+  #log > div {
+    text-align: left;
+  }
+  #log > div .meta,
+  #log > div .message {
+    transform: translateX(-150%);
+  }
+  #log > div .meta {
+    animation: reveal-left 4s 1;
+    animation-fill-mode: forwards;
+  }
+  #log > div .meta .name {
+    float: left;
+    top: 0;
+  }
+  #log > div .meta .badges {
+    padding: 0 0 0 12px;
+    margin-right: 0;
+    margin-left: -17px;
+  }
+  #log > div .meta .badge {
+    margin: 7px 4px 7px 0;
+  }
+  #log > div .meta .badge:first-child {
+    margin-left: 12px;
+  }
+  #log > div .meta .badge:last-child {
+    margin-right: 8px;
+  }
+  #log > div .message {
+    animation: 4s reveal-left 0.25s 1;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes slide-down {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 1000px;
+  }
+}
+@keyframes reveal-left {
+  0% {
+    transform: translateX(-150%);
+  }
+  5%, 100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes reveal {
+  0% {
+    transform: translateX(150%);
+  }
+  5%, 100% {
+    transform: translateX(0%);
+  }
+}/*# sourceMappingURL=chat.css.map */
